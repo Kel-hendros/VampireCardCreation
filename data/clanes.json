@@ -1,0 +1,12 @@
+{
+  "clanes": {
+    "Brujah": "iconos/brujah.png",
+    "Malkavian": "iconos/malkavian.png",
+    "Tremere": "iconos/tremere.png",
+    "Setita": "iconos/setita.png",
+    "Assamita": "iconos/assamita.png",
+    "Toreador": "iconos/toreador.png",
+    "Ventrue": "iconos/ventrue.png",
+    "Gangrel": "iconos/gangrel.png"
+  }
+}

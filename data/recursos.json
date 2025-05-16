@@ -1,0 +1,24 @@
+{
+ "fondos": [
+  { "value": "#111111", "name": "Negro profundo" },
+  { "value": "#2c0000", "name": "Rojo oscuro" },
+  { "value": "linear-gradient(to bottom, #330000, #000000)", "name": "Sangre descendente" },
+  { "value": "radial-gradient(circle at center, #333333, #000000)", "name": "Niebla circular" },
+  { "value": "assets/fondos/piedra-roja.png", "name": "Textura piedra roja" }
+],
+"temasMarco": [
+  "Sangre",
+  "Gotico",
+  "Lapida",
+  "Plata",
+  "Bronce",
+  "Obsidiana",
+  "Sombra",
+  "Velvet",
+  "Ceniza"
+],
+  "iconosTipo": [
+    "assets/iconos/icono-criatura.png",
+    "assets/iconos/icono-objeto.png"
+  ]
+}

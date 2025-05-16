@@ -1,0 +1,28 @@
+{
+  "Criatura": {
+    "categorias": {
+      "Cainita": {
+        "requiereClan": true
+      },
+      "Mortal": {},
+      "Ghoul": {},
+      "Cambiaforma": {},
+      "Espectro": {},
+      "Garou": {},
+      "Otro": {
+        "sinIconoTipo": true
+      }
+    }
+  },
+  "Objeto": {
+    "categorias": {
+      "Arma": {},
+      "Reliquia": {},
+      "Equipamento": {},
+      "Protección": {}
+    }
+  },
+  "Escena": {
+    "categorias": {}
+  }
+}
