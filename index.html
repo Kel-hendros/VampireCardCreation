@@ -8,7 +8,77 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div class="controls" id="controlsContainer">
+            <!-- Tipo de Carta -->
+            <div>
+                <label for="tipoSelect">Tipo de carta:</label>
+                <select id="tipoSelect"></select>
+            </div>
+            <br>
+
+            <!-- Tema del marco -->
+            <div>
+                <label for="temaMarcoSelect">Tema del marco:</label>
+                <select id="temaMarcoSelect"></select>
+            </div>
+            <br>
+
+            <!-- Fondo -->
+            <div>
+                <label for="fondoSelect">Fondo:</label>
+                <select id="fondoSelect"></select>
+            </div>
+            <br>
+
+            <!-- Icono Tipo & Clan -->
+            <div>
+                <label for="iconoTipoSelect">Icono Tipo:</label>
+                <select id="iconoTipoSelect"></select>
+                <label for="clanSelect" style="margin-left: 10px;">Clan:</label>
+                <select id="clanSelect"></select>
+            </div>
+            <br>
+
+            <!-- Nombre -->
+            <div>
+                <input type="text" id="nombreInput" placeholder="Nombre" style="width: calc(50% - 5px); margin-right: 5px;">
+            <!-- Descripción -->
+                <textarea id="descInput" placeholder="Descripción" style="width: calc(50% - 5px);"></textarea>
+            </div>
+            <br>
+
+            <!-- File Input -->
+            <div>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+            <br>
+
+            <!-- Image Position Sliders -->
+            <div class="slider-container">
+                <div>
+                    <label for="sliderX">Posición horizontal:</label>
+                    <input type="range" id="sliderX" min="-2000" max="2000" value="0" class="position-slider">
+                    <span id="sliderXValue" class="slider-value">0</span>
+                </div>
+                <div>
+                    <label for="sliderY">Posición vertical:</label>
+                    <input type="range" id="sliderY" min="-2000" max="2000" value="0" class="position-slider">
+                    <span id="sliderYValue" class="slider-value">0</span>
+                </div>
+            </div>
+            <br>
+
+            <!-- Export Button -->
+            <div>
+                <button id="exportBtn">Exportar como PNG</button>
+            </div>
+        </div>
+
+        <div id="canvas" class="canvas">
+            <div id="card" class="carta"></div>
+        </div>
+    </div>
 
     <script src="lib/html2canvas.min.js"></script>
     <script type="module" src="js/main.js"></script>
