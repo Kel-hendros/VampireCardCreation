@@ -1,4 +1,3 @@
-import { exportCard } from "./export.js";
-import { createUI } from "./ui.js";
+import { initializeUI } from "./ui.js";
 
-createUI({ exportCard });
+initializeUI();
