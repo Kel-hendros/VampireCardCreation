@@ -27,6 +27,7 @@ export async function initializeUI() {
   const nombreInput = document.getElementById('nombreInput');
   const descInput = document.getElementById('descInput');
   const fileInput = document.getElementById('fileInput');
+  const urlInput = document.getElementById('urlInput');
   const sliderX = document.getElementById('sliderX');
   const sliderXValue = document.getElementById('sliderXValue');
   const sliderY = document.getElementById('sliderY');
@@ -135,8 +136,34 @@ export async function initializeUI() {
       };
       imgTemp.src = ev.target.result;
     };
-    reader.readAsDataURL(file);
+  reader.readAsDataURL(file);
   });
+
+  function handleUrlInput() {
+    const url = urlInput.value.trim();
+    if (!url) return;
+    const imgTemp = new Image();
+    imgTemp.crossOrigin = "anonymous";
+    imgTemp.onload = function() {
+      opciones.imagen = url;
+      opciones.imagenAncho = imgTemp.naturalWidth;
+      opciones.imagenAlto = imgTemp.naturalHeight;
+      opciones.imagenPosX = 0;
+      opciones.imagenPosY = 0;
+      sliderX.value = 0;
+      sliderY.value = 0;
+      sliderXValue.textContent = "0";
+      sliderYValue.textContent = "0";
+      renderCard(card);
+    };
+    imgTemp.onerror = function() {
+      console.error("Error loading image from URL:", url);
+    };
+    imgTemp.src = url;
+  }
+
+  urlInput.addEventListener("change", handleUrlInput);
+  urlInput.addEventListener("input", handleUrlInput);
 
   sliderX.addEventListener("input", () => {
     opciones.imagenPosX = parseInt(sliderX.value);
