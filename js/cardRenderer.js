@@ -17,10 +17,16 @@ function createImageElement(opciones, imageClassName, containerElement) {
 
   const imagen = document.createElement("img");
   imagen.className = `imagen ${imageClassName || ""}`.trim();
+  if (!opciones.imagen.startsWith('data:')) {
+    imagen.crossOrigin = 'anonymous';
+  }
   imagen.src = opciones.imagen;
   imagen.style.transform = `translate(${opciones.imagenPosX}px, ${opciones.imagenPosY}px)`;
 
   const imgTemp = new Image();
+  if (!opciones.imagen.startsWith('data:')) {
+    imgTemp.crossOrigin = 'anonymous';
+  }
   imgTemp.src = opciones.imagen;
 
   imgTemp.onload = function () {
