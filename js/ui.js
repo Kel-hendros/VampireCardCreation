@@ -137,6 +137,31 @@ export async function initializeUI() {
       imgTemp.src = ev.target.result;
     };
   reader.readAsDataURL(file);
+
+  });
+
+  urlInput.addEventListener("change", () => {
+    const url = urlInput.value.trim();
+    if (!url) return;
+    const imgTemp = new Image();
+    imgTemp.crossOrigin = "anonymous";
+    imgTemp.onload = function() {
+      opciones.imagen = url;
+      opciones.imagenAncho = imgTemp.naturalWidth;
+      opciones.imagenAlto = imgTemp.naturalHeight;
+      opciones.imagenPosX = 0;
+      opciones.imagenPosY = 0;
+      sliderX.value = 0;
+      sliderY.value = 0;
+      sliderXValue.textContent = "0";
+      sliderYValue.textContent = "0";
+      renderCard(card);
+    };
+    imgTemp.onerror = function() {
+      console.error("Error loading image from URL:", url);
+    };
+    imgTemp.src = url;
+
   });
 
   function handleUrlInput() {
